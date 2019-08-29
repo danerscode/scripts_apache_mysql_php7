@@ -1,0 +1,8 @@
+- Acessar PHP.INI:
+TERMINAL: sudo gedit /etc/php/7.2/apache2/php.ini
+TERMINAL: sudo gedit /etc/php/7.2/cli/php.ini
+
+- Alterar linhas:
+display_erros = On
+error_reporting = E_ALL
+output_buffering = On

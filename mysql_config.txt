@@ -1,0 +1,14 @@
+A partir do ubuntu 18.04 o MySQL não mais solicita senha para o root durante a instalação.
+Para contornar isso faça o seguinte:
+
+- Via terminal, como sudo:
+	- Digite: mysql
+	- Na interface MySQL digite: use mysql;
+	- Em seguida: update user set authentication_string=PASSWORD("root") where User='root';
+	- Em seguida: update user set plugin="mysql_native_password" where User='root';
+	- Em seguida: flush privileges;
+	- E por fim: quit;
+
+Em algumas distros isso pode não resolver, daí sobra seguir o passo a passo do próprio MySQL:
+- No terminal, como sudo, digite: mysql_secure_installation > Follow the instructions on screen
+- Siga as instruções (tudo em inglês).

@@ -1,0 +1,14 @@
+Via terminal, como SUDO, libere acesso à pasta do Apache:
+
+chmod 777 -R /var/www/html/
+
+Depois disso altere as seguintes linhas encontradas em sudo gedit /etc/apache2/apache2.conf:
+- De AllowOverride None para AllowOverride All
+
+Faça isso em todas linhas que encontrar!
+
+Por fim, neste mesmo arquivo, comente com um # o seguinte trecho de código:
+
+<FilesMatch "^\.ht">
+	Require all denied
+</FilesMatch>
